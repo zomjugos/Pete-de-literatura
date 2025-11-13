@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leyendo: El Misterio de Crantock - Cogoflix Verde</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/lavenganzadelcogote.css">
+</head>
+<body>
+    <header class="header-lector">
+    <button onclick="window.location.href='index.html'" class="volver-btn">← Volver a inicio</button>        <h1>El Misterio de Crantock</h1>
+        <div class="controles-header">
+            <button id="modo-nocturno-btn">Modo nocturno</button>
+            <button id="fullscreen-btn">Pantalla completa</button>
+        </div>
+    </header>
+
+    <main class="lector-main">
+        <div id="pdf-container" class="pdf-container">
+            <iframe src="libros/Sergio Aguirre el misterio.pdf" width="100%" height="600px" style="border: none; border-radius: 5px;"></iframe>
+        </div>
+        <div class="controles">
+            <p>Usa los controles del navegador para zoom y para salir de la pantalla completa ESC.</p>
+        </div>
+    </main>
+
+    <script>
+        // Modo nocturno y fullscreen (igual que antes)
+        const modoNocturnoBtn = document.getElementById('modo-nocturno-btn');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const main = document.querySelector('.lector-main');
+
+        const modoNocturnoActivo = localStorage.getItem('modoNocturno') === 'true';
+        if (modoNocturnoActivo) {
+            main.classList.add('noche');
+            modoNocturnoBtn.textContent = 'Modo diurno';
+        }
+
+        modoNocturnoBtn.addEventListener('click', () => {
+            main.classList.toggle('noche');
+            const activo = main.classList.contains('noche');
+            localStorage.setItem('modoNocturno', activo);
+            modoNocturnoBtn.textContent = activo ? 'Modo diurno' : 'Modo nocturno';
+        });
+
+        fullscreenBtn.addEventListener('click', () => {
+            const elem = document.documentElement;
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => console.log(err));
+            } else {
+                document.exitFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>

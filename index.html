@@ -1,58 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cogoflix</title>
-    <link rel="icon" href="Multimedia/netflixLogo.jpg" type="image/png" />
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <aside class="background--banner">
-      <video muted autoplay loop poster="Multimedia/background-image.webp">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cogoflix Verde - Libros de Sergio Aguirre</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    
+      <video autoplay muted loop class="background--banner">
         <source
           src="Multimedia/856065-hd_1920_1080_30fps.mp4"
-          type="video/mp4"
-        />
-        <img src="Multimedia/background-image.webp" alt="Imagen background" />
+          type="video/mp4"/>
       </video>
-      <div class="banner">
-        <div class="menu"></div>
-        <div class="imagotipo">
-          <div class="imagotipo--imagen">
-            <img src="Multimedia/images.jpg" alt="Imagotipo" />
-          </div>
-          <div class="imagotipo--info">
-            <p>⏵Leer</p>
-            <p>ⓘ More Info</p>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <footer class="footer">
-      <div class="footer--contenedor">
-        <ul class="iconos">
-          <li>
-            <a href="#"><img src="Multimedia/facebook.svg" alt="facebook" /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img src="Multimedia/instagram.svg" alt="instagram"
-            /></a>
-          </li>
-          <li>
-            <a href="#"><img src="Multimedia/github.svg" alt="github" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="Multimedia/linkedin.svg" alt="linkedin" /></a>
-          </li>
+
+    <header class="header">
+        <h1>Cogoflix Verde</h1>
+        <nav>
+            <button id="biografia-btn">Leer biografía</button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="libros">
+            <div class="libro-card" data-libro="1">
+                <img src="Multimedia/lavenganzadelcogote.jpg" alt="La venganza de la vaca">
+                <h2>La venganza de la vaca</h2>
+                <div class="botones">
+                    <button class="leer-btn" data-url="lavenganzadelavaca.html">Leer</button>
+                    <button class="info-btn" data-info="Una historia de humor negro y terror, donde una vaca busca venganza en un pueblo tranquilo. Mezcla de lo cotidiano con lo macabro.">Ver más info</button>
+                </div>
+            </div>
+            <div class="libro-card" data-libro="2">
+                <img src="Multimedia/elmisteriodelacampera.webp" alt="El misterio de Crantock">
+                <h2>El misterio de Crantock</h2>
+                <div class="botones">
+                    <button class="leer-btn" data-url="El misterio de Crantock.html">Leer</button>
+                    <button class="info-btn" data-info="Una novela de suspenso que se ha convertido en un clásico de la literatura juvenil argentina, llena de intriga y misterio.">Ver más info</button>
+                </div>
+            </div>
+            <div class="libro-card" data-libro="3">
+                <img src="Multimedia/laskatanasmueren.PNG" alt="Los vecinos mueren en las novelas">
+                <h2>Los vecinos mueren en las novelas</h2>
+                <div class="botones">
+                    <button class="leer-btn" data-url="Los vecinos mueren en las novelas.html">Leer</button>
+                    <button class="info-btn" data-info="Una obra breve y popular por su estilo policial y final sorprendente, explorando la muerte y la vida cotidiana.">Ver más info</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Panel lateral para biografía -->
+    <div id="biografia-panel" class="biografia-panel">
+        <button id="cerrar-biografia" class="cerrar-btn">&times;</button>
+        <h2>Sergio Aguirre</h2>
+        <p>Sergio Aguirre es un escritor argentino nacido en Córdoba, Argentina, en 1961. Es conocido principalmente por sus obras destinadas al público infantojuvenil, en las que combina el misterio, el humor y lo cotidiano con una mirada muy personal sobre la adolescencia y la vida.</p>
+        <p>Estudió Artes en la Universidad Nacional de Córdoba y durante varios años trabajó como escenógrafo y director teatral, antes de dedicarse de lleno a la literatura. Esa experiencia teatral se nota en su forma de narrar, ya que sus historias suelen tener diálogos muy vivos y una estructura casi cinematográfica.</p>
+        <p>Su primer libro fue “La señora Planchik” (1992), pero alcanzó mayor reconocimiento con títulos como:</p>
+        <ul>
+            <li>“El misterio de Crantock” (2001) – una novela de suspenso que se volvió un clásico moderno de la literatura juvenil argentina.</li>
+            <li>“Los vecinos mueren en las novelas” (2008) – obra breve y muy popular por su estilo policial y su final sorprendente.</li>
+            <li>“La venganza de la vaca” (1991) – otra de sus historias más leídas, mezcla de humor negro y terror.</li>
         </ul>
-        <p class="idioma">🌎︎ Español</p>
-        <p class="contruccion">@capidev 2023</p>
-      </div>
-    </footer>
-    <script src="index.js"></script>
-  </body>
+        <p>Aguirre se caracteriza por usar un lenguaje directo, ágil y con toques de ironía, y por tratar temas profundos —como la muerte, la amistad o la identidad— de una forma accesible para jóvenes lectores.</p>
+        <p>Además de escritor, ha sido docente y promotor de lectura, participando en talleres y encuentros literarios en toda Argentina.</p>
+        <p>Gracias a su trayectoria, ha recibido premios y menciones de instituciones como la Fundación El Libro y el Ministerio de Educación argentino, y muchos de sus textos forman parte de las lecturas escolares recomendadas.</p>
+    </div>
+
+    <!-- Modal para más info -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span id="cerrar-modal" class="cerrar-btn">&times;</span>
+            <p id="info-texto"></p>
+        </div>
+    </div>
+
+    <script src="JavaScript/index.js"></script>
+</body>
 </html>
