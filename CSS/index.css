@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-image:url('../Multimedia/856065-hd_1920_1080_30fps.mp4');
+    color: white;
+    overflow-x: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+}
+
+.background--banner {
+    position: fixed;      /* Se queda fijo mientras hacés scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Cubre sin deformarse */
+  z-index: -1;          /* Lo manda detrás del contenido */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header button {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background: #f40612;
+}
+
+.main {
+    padding: 20px;
+}
+
+.libros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.libro-card {
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.libro-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.libro-card h2 {
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.botones button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.botones button:hover {
+    background: #555;
+}
+
+.leer-btn {
+    background: #e50914;
+}
+
+.leer-btn:hover {
+    background: #f40612;
+}
+
+/* Panel lateral biografía */
+.biografia-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: #222;
+    padding: 20px;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.biografia-panel.open {
+    right: 0;
+}
+
+.biografia-panel h2 {
+    margin-bottom: 20px;
+}
+
+.biografia-panel p, .biografia-panel ul {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.cerrar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background: #222;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .libros {
+        flex-direction: column;
+        align-items: center;
+    }
+    .biografia-panel {
+        width: 100%;
+        right: -100%;
+    }
+}
